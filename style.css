@@ -1,0 +1,363 @@
+/* -------------------------
+   Fonts & Variables
+------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Special+Elite&display=swap');
+
+:root {
+    --ink: #1A2B4C;          /* Faded Navy Blue (Old Ink) */
+    --paper: #F4F1EA;        /* Cream (Old Paper) */
+    --white: #FCFAF6;        /* Slightly off-white for boxes */
+    --faded: #7A8B99;        /* Faded grey-blue for secondary text */
+    --grid-line: rgba(26, 43, 76, 0.07); /* Very faint navy grid */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Courier Prime', 'Courier New', monospace;
+    background-color: var(--paper);
+    /* Math paper grid background */
+    background-image: 
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: var(--ink);
+    line-height: 1.7;
+}
+
+h1, h2, h3, nav, button, .nav-links a {
+    font-family: 'Special Elite', 'Courier New', monospace;
+    font-weight: normal;
+}
+
+/* -------------------------
+   Header & Navigation
+------------------------- */
+
+header {
+    padding: 40px 25px 20px;
+}
+
+.header-container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+nav {
+    background: var(--white);
+    border: 2px dashed var(--ink); /* Dashed border for aged feel */
+    padding: 12px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Hard, flat stamped shadow in Navy Blue */
+    box-shadow: 6px 6px 0 var(--ink);
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+}
+
+.nav-links a:hover {
+    color: var(--faded);
+}
+
+.search-box input {
+    width: 180px;
+    padding: 8px 10px;
+    border: 2px solid var(--ink);
+    background: var(--paper);
+    outline: none;
+    font-family: 'Special Elite', monospace;
+    font-size: 0.9rem;
+    color: var(--ink);
+}
+
+.search-box input:focus {
+    border-style: dashed; /* Turns dashed when clicked */
+    background: var(--white);
+}
+
+
+/* -------------------------
+   Sections
+------------------------- */
+
+section {
+    padding: 40px 25px;
+}
+
+.section-box {
+    max-width: 1100px;
+    margin: auto;
+    background: var(--white);
+    border: 2px solid var(--ink);
+    box-shadow: 8px 8px 0 var(--ink);
+    padding: 30px;
+}
+
+.section-box h2 {
+    margin-bottom: 25px;
+    font-size: 28px;
+    text-transform: uppercase;
+    border-bottom: 2px dotted var(--ink); /* Dotted line under headers */
+    padding-bottom: 10px;
+}
+
+
+/* -------------------------
+   About
+------------------------- */
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.profile-image img {
+    display: block;
+    border: 2px solid var(--ink);
+    box-shadow: 5px 5px 0 var(--ink); /* Stamped photo shadow */
+}
+
+
+/* -------------------------
+   Skills
+------------------------- */
+
+.about-text h3 {
+    margin-top: 25px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+}
+
+dl {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    row-gap: 10px;
+}
+
+dt {
+    font-family: 'Special Elite', monospace;
+    color: var(--faded); /* Faded ink for labels */
+}
+
+dd {
+    margin: 0;
+}
+
+
+/* -------------------------
+   Projects
+------------------------- */
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.project-card {
+    background: var(--white);
+    border: 2px dashed var(--ink); /* Dashed border for cards */
+    padding: 25px;
+    box-shadow: 5px 5px 0 var(--ink);
+    transition: transform 0.1s;
+}
+
+.project-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 var(--ink);
+}
+
+.project-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.project-card a {
+    color: var(--ink);
+    font-family: 'Special Elite', monospace;
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+}
+
+
+/* -------------------------
+   Contact
+------------------------- */
+
+.contact-form {
+    max-width: 650px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-family: 'Special Elite', monospace;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* Underline-only inputs to look like a paper form */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px 0;
+    border: none;
+    border-bottom: 2px solid var(--ink);
+    background: transparent;
+    outline: none;
+    font-family: 'Courier Prime', monospace;
+    font-size: 1rem;
+    color: var(--ink);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-bottom-color: var(--faded);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+button {
+    padding: 10px 18px;
+    border: 2px solid var(--ink);
+    background: var(--paper);
+    font-family: 'Special Elite', monospace;
+    font-weight: normal;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 var(--ink);
+}
+
+button:hover {
+    background: var(--ink);
+    color: var(--paper);
+}
+
+button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--ink);
+}
+
+
+/* -------------------------
+   Social
+------------------------- */
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    display: block;
+    font-family: 'Special Elite', monospace;
+    font-size: 0.9rem;
+    color: var(--ink);
+    text-decoration: none;
+    border: 1px dashed var(--ink);
+    padding: 5px 10px;
+}
+
+.social-links a:hover {
+    background: var(--ink);
+    color: var(--paper);
+}
+
+
+/* -------------------------
+   Footer
+------------------------- */
+
+footer {
+    padding: 30px 25px;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: auto;
+    border-top: 2px dotted var(--ink);
+    padding-top: 20px;
+    font-family: 'Special Elite', monospace;
+    font-size: 0.85rem;
+    color: var(--faded);
+    text-transform: uppercase;
+}
+
+
+/* -------------------------
+   Responsive
+------------------------- */
+
+@media (max-width: 700px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .search-box input {
+        width: 100%;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .project-list {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    dl {
+        grid-template-columns: 1fr;
+    }
+}
